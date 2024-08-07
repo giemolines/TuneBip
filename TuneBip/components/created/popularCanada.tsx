@@ -69,7 +69,7 @@ const PopularMusicCanada = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 16,
+    paddingVertical: 16,
     backgroundColor: '#fff',
   },
   trackItem: {

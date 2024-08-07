@@ -28,7 +28,7 @@ const RisingArtists: React.FC = () => {
     const fetchArtists = async () => {
       try {
         const response = await axios.get<LastFmResponse>(API_URL);
-        setArtists(response.data.artists.artist.slice(0, 15)); // Limit to 15 items
+        setArtists(response.data.artists.artist.slice(0, 15)); 
       } catch (err) {
         setError('Failed to fetch data');
       } finally {
@@ -76,6 +76,7 @@ const RisingArtists: React.FC = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    padding: 16,
     backgroundColor: '#fff',
   },
   artistItem: {
