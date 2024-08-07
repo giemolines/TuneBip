@@ -54,23 +54,12 @@ const PopularMusic: React.FC = () => {
         renderItem={({ item }) => (
           <TouchableOpacity onPress={() => console.log('Track clicked', item.url)}>
             <View style={styles.trackItem}>
-              <Image
-                source={{ uri: item.image[2]['#text'] || PLACEHOLDER_IMAGE }}
-                style={styles.image}
-              />
+              <Image source={{ uri: item.image[2]['#text'] || PLACEHOLDER_IMAGE }} style={styles.image}/>
               <View style={styles.textContainer}>
-                <Text 
-                  style={styles.trackName}
-                  numberOfLines={1}  // Limits to 1 line and shows ellipsis if text is too long
-                  ellipsizeMode="tail"  // Adds ellipsis at the end
-                >
+                <Text style={styles.trackName} numberOfLines={1} ellipsizeMode="tail">
                   {item.name}
                 </Text>
-                <Text 
-                  style={styles.artistName}
-                  numberOfLines={1}  // Optional: Limits artist name to 1 line
-                  ellipsizeMode="tail"  // Optional: Adds ellipsis at the end
-                >
+                <Text style={styles.artistName} numberOfLines={1} ellipsizeMode="tail">
                   {item.artist.name}
                 </Text>
               </View>
