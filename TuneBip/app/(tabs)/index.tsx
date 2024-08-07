@@ -5,6 +5,8 @@ import { Link, router } from 'expo-router';
 import { useColorScheme } from '@/components/useColorScheme';
 import { Image } from 'react-native';
 import PopularMusic from '@/components/created/popular';
+import RisingArtists from '@/components/created/popularArtists';
+import PopularMusicCanada from '@/components/created/popularCanada';
 
 
 /*Application name	TuneBip
@@ -33,8 +35,8 @@ export default function TabOneScreen() {
       </View>
       <ScrollView style={styles.mainScroll}>
         <View style={styles.scrollComponentContainer }>
-          <Text style={styles.categoryTitle}>Popular</Text>
-          <Text style={styles.categoryDesc}>Explore the top 100</Text>
+          <Text style={styles.categoryTitle}>Explore</Text>
+          <Text style={styles.categoryDesc}>Top Tracks</Text>
           <View style={styles.scrollComponent}>
             <PopularMusic/>
           </View>
@@ -44,25 +46,15 @@ export default function TabOneScreen() {
           <Text style={styles.categoryTitle}>Discover</Text>
           <Text style={styles.categoryDesc}>Rising Artists</Text>
           <View style={styles.scrollComponent}>
-            <ScrollView showsHorizontalScrollIndicator={false} horizontal={true}>
-              <View style={styles.artistItem}></View>
-              <View style={styles.artistItem}></View>
-              <View style={styles.artistItem}></View>
-              <View style={styles.artistItem}></View>
-              <View style={styles.artistItem}></View>
-            </ScrollView>
+            <RisingArtists/>
           </View>
         </View>
 
         <View style={styles.scrollComponentContainer}>
-          <Text style={styles.categoryTitle}>For you</Text>
+          <Text style={styles.categoryTitle}>Canada</Text>
+          <Text style={styles.categoryDesc}>Canada's Top Songs</Text>
           <View style={styles.scrollComponent}>
-            <ScrollView showsHorizontalScrollIndicator={false} horizontal={true}>
-              <View style={styles.trackItem}></View>
-              <View style={styles.trackItem}></View>
-              <View style={styles.trackItem}></View>
-              <View style={styles.trackItem}></View>
-            </ScrollView>
+            <PopularMusicCanada/>
           </View>
         </View>
         

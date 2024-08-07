@@ -21,7 +21,7 @@ const API_KEY = '2372bfe714750da249c8a9084c7845a4';
 const API_URL = `https://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&api_key=${API_KEY}&format=json`;
 const PLACEHOLDER_IMAGE = 'https://via.placeholder.com/100';
 
-const PopularMusic: React.FC = () => {
+const PopularMusic = () => {
   const [tracks, setTracks] = useState<Track[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -46,12 +46,7 @@ const PopularMusic: React.FC = () => {
 
   return (
     <View style={styles.container}>
-      <FlatList
-        data={tracks}
-        keyExtractor={(item) => item.url}
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        renderItem={({ item }) => (
+      <FlatList data={tracks} keyExtractor={(item) => item.url} horizontal showsHorizontalScrollIndicator={false} renderItem={({ item }) => (
           <TouchableOpacity onPress={() => console.log('Track clicked', item.url)}>
             <View style={styles.trackItem}>
               <Image source={{ uri: item.image[2]['#text'] || PLACEHOLDER_IMAGE }} style={styles.image}/>
