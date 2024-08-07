@@ -5,6 +5,14 @@ import { Link, router } from 'expo-router';
 import { useColorScheme } from '@/components/useColorScheme';
 import { Image } from 'react-native';
 
+
+Application name	TuneBip
+API key	2372bfe714750da249c8a9084c7845a4
+Shared secret	b6d7d880ca8c224a0fd3ba733f5655d5
+Registered to	camilla_molines
+
+
+
 export default function TabOneScreen() {
   const colorScheme = useColorScheme();
   getAuth().onAuthStateChanged((user) => {
