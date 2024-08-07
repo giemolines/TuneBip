@@ -101,7 +101,7 @@ const styles = StyleSheet.create({
     shadowColor: 'indigo',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.5,
-    shadowRadius: 15,
+    shadowRadius: 10,
   },
 
   profile:{
