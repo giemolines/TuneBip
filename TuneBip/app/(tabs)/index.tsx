@@ -4,12 +4,13 @@ import { getAuth } from 'firebase/auth';
 import { Link, router } from 'expo-router';
 import { useColorScheme } from '@/components/useColorScheme';
 import { Image } from 'react-native';
+import PopularMusic from '@/components/created/popular';
 
 
-Application name	TuneBip
+/*Application name	TuneBip
 API key	2372bfe714750da249c8a9084c7845a4
 Shared secret	b6d7d880ca8c224a0fd3ba733f5655d5
-Registered to	camilla_molines
+Registered to	camilla_molines*/
 
 
 
@@ -35,12 +36,7 @@ export default function TabOneScreen() {
           <Text style={styles.categoryTitle}>Popular</Text>
           <Text style={styles.categoryDesc}>Explore the top 100</Text>
           <View style={styles.scrollComponent}>
-            <ScrollView showsHorizontalScrollIndicator={false} horizontal={true}>
-              <View style={styles.trackItem}></View>
-              <View style={styles.trackItem}></View>
-              <View style={styles.trackItem}></View>
-              <View style={styles.trackItem}></View>
-            </ScrollView>
+            <PopularMusic/>
           </View>
         </View>
 
