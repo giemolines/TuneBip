@@ -33,7 +33,7 @@ export default function Index() {
 
     return (
         <SafeAreaView style={styles.container}>
-            <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} style={styles.innerCointainer}>
+            <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} style={styles.innerContainer}>
                     <Text style={styles.headerText}>TuneBip Login</Text>
                     <Image source={require('../assets/images/tunebip_logo.png')} style={styles.logo}/>
                     <Text style={styles.h2}>Create an account</Text>
@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'white'
     },
 
-    innerCointainer:{
+    innerContainer:{
         flex:1,
         justifyContent: 'center',
         alignItems: 'center',
