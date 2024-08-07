@@ -1,17 +1,19 @@
 import { StatusBar } from 'expo-status-bar';
-import { Platform, StyleSheet } from 'react-native';
+import { Platform, SafeAreaView, StyleSheet, TouchableOpacity } from 'react-native';
 
 import EditScreenInfo from '@/components/EditScreenInfo';
 import { Text, View } from '@/components/Themed';
+import { auth } from '@/FirebaseConfig';
 
 export default function ModalScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Modal</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="app/modal.tsx" />
-
-      {/* Use a light status bar on iOS to account for the black space above the modal */}
+      <SafeAreaView style={styles.container}>
+      <Text>SignOut</Text>
+      <TouchableOpacity onPress={()=> auth.signOut()}>
+        <Text>Sign Out</Text>
+      </TouchableOpacity>
+    </SafeAreaView>
       <StatusBar style={Platform.OS === 'ios' ? 'light' : 'auto'} />
     </View>
   );
