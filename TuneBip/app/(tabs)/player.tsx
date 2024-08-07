@@ -1,21 +1,24 @@
-import { StyleSheet } from 'react-native';
+'use client'
+import { StyleSheet, Button, View } from 'react-native';
 import React, { useState, useEffect } from 'react';
 import { Audio } from 'expo-av';
-import { Button } from 'react-native';
-import EditScreenInfo from '@/components/EditScreenInfo';
-import { Text, View } from '@/components/Themed';
 
 export default function TabTwoScreen() {
-  const [sound, setSound] = useState();
+  const [sound, setSound] = useState<Audio.Sound | null>(null);
 
   async function playSound() {
-    console.log('Loading Sound');
-    const { sound } = await Audio.Sound.createAsync( require('./assets/library/PilotJones.mp3')
-    );
-    setSound(sound);
+    try {
+      console.log('Loading Sound');
+      const { sound } = await Audio.Sound.createAsync(
+        require('../../assets/library/PilotJones.mp3') // Ensure this path is correct
+      );
+      setSound(sound);
 
-    console.log('Playing Sound');
-    await sound.playAsync();
+      console.log('Playing Sound');
+      await sound.playAsync();
+    } catch (error) {
+      console.error('Error loading or playing sound:', error);
+    }
   }
 
   useEffect(() => {
