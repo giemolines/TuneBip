@@ -39,17 +39,19 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="two"
+        name="player"
         options={{
           title: 'Now Playing',
           tabBarIcon: ({ color }) => <Feather name="radio" size={26} color={color} />,
+          headerShown:false,
         }}
       />
       <Tabs.Screen
-        name="three"
+        name="library"
         options={{
           title: 'Library',
           tabBarIcon: ({ color }) => <MaterialCommunityIcons name="bookshelf" size={30} color={color}/>,
+          headerShown:false,
         }}
       />
     </Tabs>

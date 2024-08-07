@@ -23,34 +23,45 @@ export default function TabOneScreen() {
         </View>
       </View>
       <ScrollView style={styles.mainScroll}>
-        <View style={styles.component}>
-          <Text>Popular</Text>
-          <ScrollView horizontal={true}>
-            <View style={styles.trackItem}></View>
-            <View style={styles.trackItem}></View>
-            <View style={styles.trackItem}></View>
-            <View style={styles.trackItem}></View>
-          </ScrollView>
-        </View>
-        <View style={styles.component}>
-          <Text>Discover</Text>
-          <ScrollView horizontal={true}>
-            <View style={styles.trackItem}></View>
-            <View style={styles.trackItem}></View>
-            <View style={styles.trackItem}></View>
-            <View style={styles.trackItem}></View>
-          </ScrollView>
-        </View>
-        <View style={styles.component}>
-          <Text>New</Text>
-          <ScrollView horizontal={true}>
-            <View style={styles.trackItem}></View>
-            <View style={styles.trackItem}></View>
-            <View style={styles.trackItem}></View>
-            <View style={styles.trackItem}></View>
-          </ScrollView>
+        <View style={styles.scrollComponentContainer }>
+          <Text style={styles.categoryTitle}>Popular</Text>
+          <Text style={styles.categoryDesc}>Explore the top 100</Text>
+          <View style={styles.scrollComponent}>
+            <ScrollView showsHorizontalScrollIndicator={false} horizontal={true}>
+              <View style={styles.trackItem}></View>
+              <View style={styles.trackItem}></View>
+              <View style={styles.trackItem}></View>
+              <View style={styles.trackItem}></View>
+            </ScrollView>
+          </View>
         </View>
 
+        <View style={styles.scrollComponentContainer}>
+          <Text style={styles.categoryTitle}>Discover</Text>
+          <Text style={styles.categoryDesc}>Rising Artists</Text>
+          <View style={styles.scrollComponent}>
+            <ScrollView showsHorizontalScrollIndicator={false} horizontal={true}>
+              <View style={styles.artistItem}></View>
+              <View style={styles.artistItem}></View>
+              <View style={styles.artistItem}></View>
+              <View style={styles.artistItem}></View>
+              <View style={styles.artistItem}></View>
+            </ScrollView>
+          </View>
+        </View>
+
+        <View style={styles.scrollComponentContainer}>
+          <Text style={styles.categoryTitle}>For you</Text>
+          <View style={styles.scrollComponent}>
+            <ScrollView showsHorizontalScrollIndicator={false} horizontal={true}>
+              <View style={styles.trackItem}></View>
+              <View style={styles.trackItem}></View>
+              <View style={styles.trackItem}></View>
+              <View style={styles.trackItem}></View>
+            </ScrollView>
+          </View>
+        </View>
+        
       </ScrollView>
     </View>
   );
@@ -68,18 +79,32 @@ const styles = StyleSheet.create({
     flex: 4,
   },
 
+  artistItem:{
+    height:100,
+    width:100,
+    borderRadius:100,
+    margin:10,
+    backgroundColor:'orange'
+
+  },
+
   trackItem:{
     height:200,
     width:200,
+    borderRadius:20,
     margin:10,
     backgroundColor:'orange',
   },
+  scrollComponentContainer:{
+    flexDirection:'column',
+    flex:1,
+    marginBottom:20,
+  },
 
-  component:{
+  scrollComponent:{
     justifyContent: 'center',
     alignItems:'center',
     flex:1,
-    height:300,
     flexDirection: 'row'
 
   },
@@ -89,6 +114,7 @@ const styles = StyleSheet.create({
     flexDirection:'row',
     justifyContent: 'space-between',
     margin:20,
+    padding:10,
   },
 
   title:{
@@ -108,6 +134,17 @@ const styles = StyleSheet.create({
     borderRadius:100,
     width:50,
     height:50,
+  },
+
+  categoryTitle:{
+    fontSize:30,
+    fontWeight:'bold',
+    paddingLeft:20,
+  },
+  categoryDesc:{
+    fontSize:20,
+    color: 'grey',
+    paddingLeft:20,
+    paddingTop:10,
   }
-  
 });
