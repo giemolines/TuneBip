@@ -1,14 +1,8 @@
-import { Pressable, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
-import EditScreenInfo from '@/components/EditScreenInfo';
+import { Pressable, ScrollView, StyleSheet} from 'react-native';
 import { Text, View } from '@/components/Themed';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { auth } from '@/FirebaseConfig';
 import { getAuth } from 'firebase/auth';
 import { Link, router } from 'expo-router';
-import { FontAwesome } from '@expo/vector-icons';
-import Colors from '@/constants/Colors';
 import { useColorScheme } from '@/components/useColorScheme';
-import { useClientOnlyValue } from '@/components/useClientOnlyValue';
 import { Image } from 'react-native';
 
 export default function TabOneScreen() {
@@ -28,15 +22,33 @@ export default function TabOneScreen() {
           </Link>
         </View>
       </View>
-      <ScrollView style={styles.scroll}>
+      <ScrollView style={styles.mainScroll}>
         <View style={styles.component}>
-
+          <Text>Popular</Text>
+          <ScrollView horizontal={true}>
+            <View style={styles.trackItem}></View>
+            <View style={styles.trackItem}></View>
+            <View style={styles.trackItem}></View>
+            <View style={styles.trackItem}></View>
+          </ScrollView>
         </View>
         <View style={styles.component}>
-
+          <Text>Discover</Text>
+          <ScrollView horizontal={true}>
+            <View style={styles.trackItem}></View>
+            <View style={styles.trackItem}></View>
+            <View style={styles.trackItem}></View>
+            <View style={styles.trackItem}></View>
+          </ScrollView>
         </View>
         <View style={styles.component}>
-
+          <Text>New</Text>
+          <ScrollView horizontal={true}>
+            <View style={styles.trackItem}></View>
+            <View style={styles.trackItem}></View>
+            <View style={styles.trackItem}></View>
+            <View style={styles.trackItem}></View>
+          </ScrollView>
         </View>
 
       </ScrollView>
@@ -52,14 +64,23 @@ const styles = StyleSheet.create({
     justifyContent:'space-between'
   },
 
-  scroll:{
+  mainScroll:{
     flex: 4,
   },
 
+  trackItem:{
+    height:200,
+    width:200,
+    margin:10,
+    backgroundColor:'orange',
+  },
+
   component:{
+    justifyContent: 'center',
+    alignItems:'center',
+    flex:1,
     height:300,
-    backgroundColor:'lightgrey',
-    margin:20,
+    flexDirection: 'row'
 
   },
 
