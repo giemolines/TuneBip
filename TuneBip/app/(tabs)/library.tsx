@@ -121,7 +121,7 @@ const styles = StyleSheet.create({
     borderBottomColor: '#ddd',
   },
   trackItemPlaying: {
-    backgroundColor: 'lightgrey', 
+    backgroundColor: 'light', 
   },
   albumCover: {
     width: 60,

@@ -59,6 +59,7 @@ export default function TabOneScreen() {
         </View>
         
       </ScrollView>
+
     </View>
   );
 }

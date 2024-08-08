@@ -10,7 +10,6 @@ import Colors from '@/constants/Colors';
 import { useColorScheme } from '@/components/useColorScheme';
 import { useClientOnlyValue } from '@/components/useClientOnlyValue';
 
-// You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
 function TabBarIcon(props: {
   name: React.ComponentProps<typeof FontAwesome>['name'];
   color: string;
@@ -35,14 +34,6 @@ export default function TabLayout() {
         options={{
           title: 'Home',
           tabBarIcon: ({ color }) => <FontAwesome name="home" size={26} color={color} />,
-          headerShown:false,
-        }}
-      />
-      <Tabs.Screen
-        name="player"
-        options={{
-          title: 'Now Playing',
-          tabBarIcon: ({ color }) => <Feather name="radio" size={26} color={color} />,
           headerShown:false,
         }}
       />
