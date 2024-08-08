@@ -9,9 +9,8 @@ export default function ModalScreen() {
   return (
     <View style={styles.container}>
       <SafeAreaView style={styles.container}>
-      <Text>SignOut</Text>
-      <TouchableOpacity onPress={()=> auth.signOut()}>
-        <Text>Sign Out</Text>
+      <TouchableOpacity style={styles.signOutButton} onPress={()=> auth.signOut() }>
+        <Text style={styles.signOut}>Sign Out</Text>
       </TouchableOpacity>
     </SafeAreaView>
       <StatusBar style={Platform.OS === 'ios' ? 'light' : 'auto'} />
@@ -23,7 +22,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'space-between',
   },
   title: {
     fontSize: 20,
@@ -34,4 +33,21 @@ const styles = StyleSheet.create({
     height: 1,
     width: '80%',
   },
+  signOut:{
+    fontSize:20,
+    fontWeight:'500',
+    textAlign: 'center',
+    color: 'white',
+  },
+  signOutButton:{
+    justifyContent: "center",
+    alignItems: 'center',
+    width: 300,
+    height: 50,
+    borderRadius: 15,
+    backgroundColor: 'black',
+    marginBottom: 10,
+    paddingHorizontal: 10
+},
+
 });

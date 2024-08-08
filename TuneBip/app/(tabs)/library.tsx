@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, Image, ScrollView, Pressable } from 'react-native';
 import { Audio } from 'expo-av';
 import tracks from '../../assets/library/library.json'; 
-import trackPaths from '../../assets/library/trackPaths';  // Adjust the import path as necessary
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons';  // Import MaterialIcons
+import trackPaths from '../../assets/library/trackPaths'; 
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';  
 
 const TabTwoScreen = () => {
   const [sound, setSound] = useState<Audio.Sound | null>(null);
@@ -49,6 +49,13 @@ const TabTwoScreen = () => {
     };
   }, [sound]);
 
+  const getTrackItemStyle = (index: number) => {
+    return [
+      styles.trackItem,
+      isPlaying && currentTrack === index && styles.trackItemPlaying,
+    ];
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.topBar}>
@@ -58,7 +65,7 @@ const TabTwoScreen = () => {
         {tracks.map((track, index) => (
           <Pressable
             key={index}
-            style={styles.trackItem}
+            style={getTrackItemStyle(index)}
             onPress={() => {
               if (isPlaying && currentTrack === index) {
                 stopSound();
@@ -112,6 +119,9 @@ const styles = StyleSheet.create({
     padding: 10,
     borderBottomWidth: 1,
     borderBottomColor: '#ddd',
+  },
+  trackItemPlaying: {
+    backgroundColor: 'lightgrey', 
   },
   albumCover: {
     width: 60,
